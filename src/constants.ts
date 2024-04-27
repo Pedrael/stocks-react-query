@@ -5,3 +5,7 @@ export enum RequestMethods {
   delete = 'DELETE',
   patch = 'PATCH',
 }
+
+export enum ReactQueryKeys {
+  stocks = 'stocks',
+}

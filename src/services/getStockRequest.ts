@@ -1,12 +1,11 @@
 import { RequestMethods } from '../constants'
 import { api } from '../keys.json'
-const url =
-  'https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-01-09/2023-01-09'
+
 const method = RequestMethods.get
 const headers = {
   Authorization: 'Bearer ' + api,
 }
-export const request = async () => {
+export const request = async (url: string) => {
   const response = await fetch(url, {
     method: method,
     headers: headers,
@@ -19,6 +18,5 @@ export const request = async () => {
       } METHOD: ${method} HEADERS: ${JSON.stringify(headers)} `,
     )
   }
-
   return await response.json()
 }
